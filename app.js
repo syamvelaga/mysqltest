@@ -5,11 +5,11 @@ const app = express()
 
 const db = mysql.createConnection({
     connectionLimit: 10,
-    host: "localhost",
-    user:"root",
-    password:"$995949KKk",
-    database: "mytestdb"
-})
+    host: process.env.DB_HOST || "localhost",
+    user: process.env.DB_USER || "root",
+    password: process.env.DB_PASSWORD || "$995949KKk",
+    database: process.env.DB_DATABASE || "mytestdb"
+});
 app.get("/home", (req, res) => {
     let query = `SELECT * from test`;
     db.query(query, (err, data) => {
