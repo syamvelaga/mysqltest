@@ -1,0 +1,12 @@
+POST http://localhost:3001/insert
+Content-Type: application/json
+
+{ 
+    "user_name": "syam",
+    "age": 31,
+    "address": "123 Main St, City, Country"
+}
+
+###
+ http://localhost:3001/home
+
